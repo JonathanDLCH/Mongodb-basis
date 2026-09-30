@@ -1,0 +1,16 @@
+use("store")
+
+db.products.find({
+    price: 100
+}).count()
+
+db.products.updateMany(
+    //query
+    {price: 102},
+    //update - operators
+    {
+        $set: {
+            category: "cheap"
+        }
+    }
+)

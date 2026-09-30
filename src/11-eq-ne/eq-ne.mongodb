@@ -1,0 +1,19 @@
+use("store")
+
+// Using $eq
+db.inventory.find({
+    qty:{
+        $eq: 20
+    }
+})
+
+db.inventory.find({
+    "item.name": "ab"
+})
+
+//using $ne
+db.inventory.find({
+    qty:{
+        $ne: 20
+    }
+})

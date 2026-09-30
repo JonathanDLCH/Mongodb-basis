@@ -1,0 +1,36 @@
+use("store")
+
+db.inventory.find({
+    "item.description": "Single line description."
+})
+
+db.inventory.find({
+    "item.description": {
+        $regex: /line/
+    }
+})
+
+
+db.inventory.find({
+    "item.description": {
+        $regex: /LINE/i //No case sensitive
+    }
+})
+
+db.inventory.find({
+    "item.description": {
+        $regex: /line$/i //ends with line
+    }
+})
+
+db.inventory.find({
+    "item.description": {
+        $regex: /^single/i //start with sinle
+    }
+})
+
+db.inventory.find({
+    "item.description": {
+        $regex: /^s/im //multi line start with s
+    }
+})

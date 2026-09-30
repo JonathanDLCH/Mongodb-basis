@@ -1,0 +1,9 @@
+use("store")
+
+db.documents.deleteOne({_id: 1})
+
+db.documents.deleteMany({
+    price: 100
+})
+
+db.documents.drop()

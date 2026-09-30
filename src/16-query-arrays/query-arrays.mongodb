@@ -1,0 +1,59 @@
+use('platzi_store')
+
+// $in, ob,values and arrays
+
+db.inventory.find({
+    qty: {
+        $in: [20,25]
+    }
+})
+
+db.inventory.find({
+    tags: {
+        $in: ["book","electronics"]
+    }
+})
+
+// $nin, values and arrays
+
+db.inventory.find({
+    qty: {
+        $nin: [20,25]
+    }
+})
+
+db.inventory.find({
+    tags: {
+        $nin: ["book","electronics"]
+    }
+})
+
+//arrays
+
+db.inventory.find({ //stricted equal
+    tags: ["school","book"]
+})
+
+db.inventory.find({ //Like and operator
+    tags: {
+        $all : ["book","school"]
+    }
+})
+
+// $size find the element by size of array
+
+db.inventory.find({
+    tags: {
+        $size: 2
+    }
+})
+
+// $elemMatch
+db.survey.find({
+    results: {
+        $elemMatch: {
+            product: "xyz",
+            score: { $gte: 7}
+        }
+    }
+})

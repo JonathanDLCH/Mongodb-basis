@@ -1,0 +1,9 @@
+use("store")
+
+db.products.find({
+    //query
+    price: {$gte: 200, $lte:300}
+},{
+    //projection
+    "name": 1, "_id": 0
+})

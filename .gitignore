@@ -1,0 +1,30 @@
+### Linux ###
+*~
+
+.fuse_hidden*
+
+.directory
+
+.Trash-*
+
+.nfs*
+
+#### MAC ###
+.DS_Store
+.AppleDouble
+.LSOverride
+
+Icon
+
+._*
+
+.Spotlight-V100
+
+.TemporalyItems
+
+.apdisk
+
+*.icloud
+
+mongodb_data/
+django/

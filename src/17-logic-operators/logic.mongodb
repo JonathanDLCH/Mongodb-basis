@@ -1,0 +1,40 @@
+use("sample_training")
+
+// and implicit
+db.inspections.find({
+    sector: "Tax Prepares - 891",
+    result: "Unable to Locate"
+})
+
+// and explicit [{condition 1}, {condition 2}, {}]
+db.inspections.find({
+    $and: [
+        { sector : "Tax Prepares - 891" },
+        { result: "Unable to Locate" }
+    ]
+})
+
+// or explicit
+db.inspections.find({
+    $or: [
+        { sector : "Tax Prepares - 891" },
+        { result: "Unable to Locate" }
+    ]
+})
+
+// nor
+db.inspections.find({
+    $nor: [
+        { sector : "Tax Prepares - 891" },
+        { result: "Unable to Locate" }
+    ]
+})
+
+// not
+db.inspections.find({
+    result: {
+        $not: {
+            $regex: /Unable to Locate/
+        }
+    }
+})
